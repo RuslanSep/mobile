@@ -2,7 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:labs_app/feature/lab_3/ui/todo_screen.dart';
 import 'package:labs_app/feature/lab_4/ui/calendar_screen.dart';
-import 'package:labs_app/feature/lab_5/ui/bloc_provider_api.dart';
 import 'package:labs_app/generated/locale_keys.g.dart';
 
 import '../../../../feature/lab_1/ui/calculation_screen.dart';
@@ -76,17 +75,6 @@ class DrawerLocal extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                           builder: (context) => const CalendarScreen()));
-                }),
-            ListTile(
-                title: Text(LocaleKeys.rick_and_Morty.tr(),
-                    style: Theme.of(context).textTheme.headline6),
-                leading: const Icon(Icons.compare_arrows_sharp),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => HomePagePersonRickAndMorti(
-                              title: LocaleKeys.rick_and_Morty.tr())));
                 }),
           ],
         ),

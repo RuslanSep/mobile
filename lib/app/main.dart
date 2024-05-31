@@ -16,8 +16,6 @@ import '../feature/lab_2/ui/converter_list.dart';
 import '../feature/lab_3/ui/todo_screen.dart';
 import '../feature/lab_4/domain/bloc/calendar_bloc.dart';
 import '../feature/lab_4/ui/calendar_screen.dart';
-import '../feature/lab_5/bloc_observable.dart';
-import '../feature/lab_5/ui/bloc_provider_api.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,7 +34,6 @@ void main() async {
           fallbackLocale: const Locale('en'),
           child: const MyApp()),
     ),
-    blocObserver: CharacterBlocObservable(),
     storage: storage,
   );
 }
@@ -172,26 +169,6 @@ class _MyHomePageState extends State<MyHomePage>
                         context,
                         MaterialPageRoute(
                             builder: (context) => const CalendarScreen()));
-                  }),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            Container(
-              padding: const EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(25)),
-              child: ListTile(
-                  title: Text(LocaleKeys.rick_and_Morty.tr(),
-                      style: Theme.of(context).textTheme.headline6),
-                  leading: const Icon(Icons.compare_arrows_sharp),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => HomePagePersonRickAndMorti(
-                                title: LocaleKeys.rick_and_Morty.tr())));
                   }),
             ),
           ],
